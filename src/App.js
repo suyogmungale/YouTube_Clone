@@ -2,14 +2,14 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Box } from '@mui/material';
-//import { Feed } from '@mui/icons-material';
+import { Feed, Navbar, ChannelDetail, VideoDetail, SearchDetail, SearchBar } from './component';
 
 function App() {
   return (
     <BrowserRouter>
 
       <Box sx={{ backgroundColor: '#000' }}>
-        Navbar
+        <Navbar/>
       </Box>
       <Routes>
         <Route path='/' exact element={<Feed />} />
