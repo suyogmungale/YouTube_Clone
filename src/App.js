@@ -1,12 +1,9 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
 
-function App() {
+const App = () => {
   return (
-    <div>
-      
-    </div>
-  );
+    <div className="text-red-700 text-3xl">App</div>
+  )
 }
 
-export default App;
+export default App
