@@ -51,6 +51,8 @@ const Header = () => {
         <img className="h-full hidden dark:md:block " src={ytLogo} alt="ytl" />
         <img className="h-full md:hidden " src={ytLogoMobile} alt="ytm" />
         </Link>
+        
+        </div>
         <div className="group flex items-center">
           <div className="flex h-8 md:h-10 md:ml-10 md:pl-5 border border-[#303030] rounded-l-3xl group-focus-within:border-blue-500 md:group-focus-within:ml-5 md:group-focus-within:pl-0">
             <div className="w-10 items-center justify-center hidden group-focus-within:md:flex">
@@ -64,9 +66,25 @@ const Header = () => {
             placeholder="Search"
             value={searchQuery}
             />
+            
+          </div>
+          <button className="w-[40] md:w-[60] h-8 md:h-10 flex items-center justify-center border border-l-0 border-[#303030] rounded-r-3xl bg-white/[0.1]">
+              <IoIosSearch className="text-white text-xl"/>
+            </button>
+      </div>
+      <din className="flex items-center">
+        <div className="hidden md:flex">
+          <div className="flex items-center justify-center h-10 w-10 rounded-full hover:bg-[#303030]/[0.6] ">
+            <RiVideoAddLine className="text-white text-xl cursor-pointer "/>
+          </div>
+          <div className="flex items-center justify-center ml-2 h-10 w-10 rounded-full hover:bg-[#303030]/[0.6] ">
+            <FiBell className="text-white text-xl cursor-pointer "/>
+          </div>
+          <div className="flex h-8 w-8 overflow-hidden rounded-full md:ml-4 ">
+            <img src="xsgames.co/randomusers/avatar.php?g=male" alt="profile" />
           </div>
         </div>
-      </div>
+      </din>
     </div>
   )
 }
