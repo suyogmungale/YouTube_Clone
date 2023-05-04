@@ -9,22 +9,21 @@ export const AppContext = (props) => {
 
     const [loading, setLoading] = useState(false);
     const [searchResult, setSearchResult] = useState(false);
-    const [selectCategory, setSelectCategory] = useState(false);
+    const [selectedCategory, setSelectedCategory] = useState(false);
     const [mobileMenu, setMobileMenu] = useState(false);
 
     useEffect(() => {
-        fetchSelectedCategoryData(selectCategory)
-    }, [selectCategory])
+        fetchSelectedCategoryData(selectedCategory)
+    }, [selectedCategory])
 
-    const  fetchSelectedCategoryData = (query) => {
+    const fetchSelectedCategoryData = (query) => {
         setLoading(true)
-        fetchDataFromApi(`search/?q=${query}`) . then((contents) => {
+        fetchDataFromApi(`search/?q=${query}`).then((contents) => {
             console.log(contents)
             setSearchResult(contents)
             setLoading(false)
-        }
-        )
-      }
+        })
+    }
 
     return (
         <Context.Provider
@@ -33,8 +32,8 @@ export const AppContext = (props) => {
                 setLoading,
                 searchResult,
                 setSearchResult,
-                selectCategory,
-                setSelectCategory,
+                selectedCategory,
+                setSelectedCategory,
                 mobileMenu,
                 setMobileMenu
             }}
