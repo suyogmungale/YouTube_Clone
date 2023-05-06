@@ -8,7 +8,7 @@ export const Context = createContext();
 export const AppContext = (props) => {
 
     const [loading, setLoading] = useState(false);
-    const [searchResult, setSearchResult] = useState(false);
+    const [searchResults, setSearchResults] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState(false);
     const [mobileMenu, setMobileMenu] = useState(false);
 
@@ -17,21 +17,21 @@ export const AppContext = (props) => {
     }, [selectedCategory])
 
     const fetchSelectedCategoryData = (query) => {
-        setLoading(true)
-        fetchDataFromApi(`search/?q=${query}`).then((contents) => {
-            console.log(contents)
-            setSearchResult(contents)
-            setLoading(false)
-        })
-    }
+        setLoading(true);
+        fetchDataFromApi(`search/?q=${query}`).then(({ contents }) => {
+            console.log(contents);
+            setSearchResults(contents);
+            setLoading(false);
+        });
+    };
 
     return (
         <Context.Provider
             value={{
                 loading,
                 setLoading,
-                searchResult,
-                setSearchResult,
+                searchResults,
+                setSearchResults,
                 selectedCategory,
                 setSelectedCategory,
                 mobileMenu,
