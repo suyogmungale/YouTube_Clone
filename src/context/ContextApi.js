@@ -1,7 +1,7 @@
 import React from "react"
 import { createContext, useContext, useEffect, useState } from "react"
 
-import { fetchDataFromApi } from '../utils/Api'
+import { fetchDataFromApi } from '../utils/api'
 
 export const Context = createContext();
 
